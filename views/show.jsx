@@ -21,6 +21,12 @@ function Show ({bread, index}) {
           }
           have gluten.
         </p>
+        <h4>Ingredients</h4>
+       <ul>
+         //this function implicitly returns becuase one line arrrow functions
+         //behave this way
+        {bread.ingredients.map(ingredient => <li key={index}>{ingredient}</li>)}
+        </ul>
         <img src={bread.image} alt={bread.name} />
         <li><a href="/breads">Go home</a></li>
       </Default>
