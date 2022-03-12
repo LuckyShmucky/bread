@@ -18,35 +18,21 @@ breads.get('/new', (req, res) => {
     res.render('new')
 })
 
-// SHOW
-// breads.get('/:arrayIndex', (req, res) => {
-//    const pickBread = Bread[Number(req.params.arrayIndex)]
-//    res.render('show', {
-//        bread: pickBread
-//    })
-  
-//   })
-
-// SHOW
-// breads.get('/:arrayIndex', (req, res) => {
-//     res.render('Show', {
-//       bread: Bread[req.params.arrayIndex]
-//     })
-//   })
-
-
 // show, if the user searches for a bread
 //that doesn't exist, they will be sent 
 //to a 404 page
+// SHOW
 breads.get('/:arrayIndex', (req, res) => {
-    if (Bread[req.params.arrayIndex]) {
-      res.render('Show', {
-        bread:Bread[req.params.arrayIndex]
-      })
-    } else {
-      res.render('404')
-    }
-  })
+ 
+  if (Bread[req.params.arrayIndex]) {
+    res.render('Show', {
+      bread:Bread[req.params.arrayIndex],
+      index: req.params.arrayIndex,
+    })
+  } else {
+    res.render('404')
+  }
+})
 
   // CREATE
 breads.post('/', (req, res) => {
@@ -61,5 +47,11 @@ breads.post('/', (req, res) => {
     }
     Bread.push(req.body)
     res.redirect('/breads')
-  })
+  })  
+
+  // DELETE   breas/:id
+breads.delete('/:indexArray', (req, res) => {
+  Bread.splice(req.params.indexArray, 1)
+  res.status(303).redirect('/breads')
+})
 module.exports = breads

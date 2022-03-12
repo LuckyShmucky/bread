@@ -6,7 +6,7 @@ function Index ({breads, title}) {
     
     console.log(breads)
     return ( 
-        
+          
       <Default title={title}>
        {/* <h2>Index Page</h2>
         <p>I have {breads[0].name} bread!</p> */}
