@@ -4,7 +4,7 @@ const Default = require('./layouts/Default')
 
 function Index ({breads, title}) {
     
-    console.log(breads)
+    // console.log(breads)
     return ( 
           
       <Default title={title}>
@@ -12,10 +12,10 @@ function Index ({breads, title}) {
         <p>I have {breads[0].name} bread!</p> */}
 
         <ul>
-        {breads.map((bread, index) =>{
+        {breads.map((bread) =>{
             return (
-            <li key={index}>
-            <a href={`/breads/${index}`}> {bread.name}</a>
+            <li key={bread.id}>
+            <a href={`/breads/${bread.id}`}> {bread.name}</a>
             </li>
             )
         })}
