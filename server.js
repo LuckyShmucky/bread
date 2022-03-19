@@ -13,8 +13,11 @@ mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopolo
 )
 // MIDDLEWARE
 app.set('views', __dirname + '/views')
+//engine we are using for our views
 app.set('view engine', 'jsx')
+//creating and engine for jsx including react 
 app.engine('jsx', require('express-react-views').createEngine())
+//using our public file
 app.use(express.static('public'))
 app.use(express.urlencoded({extended: true}))
 app.use(methodOverride('_method'))

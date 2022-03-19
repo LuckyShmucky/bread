@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 // creating shorthand for schema constructor 
 const {Schema} = mongoose
-
+// console.log(process.env.MONGO_URI)
 const breadSchema = new Schema({
   name: { type: String, required: true },
   hasGluten: Boolean,
