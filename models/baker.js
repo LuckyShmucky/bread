@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const {
      Schema 
     } = mongoose
-
+const Bread = require('./bread.js')
 
 // schema
 const bakerSchema = new Schema({
@@ -17,7 +17,9 @@ const bakerSchema = new Schema({
         required: true
     },
     bio: String
-})
+}, {toJSON: {virtuals: true}})
+
+
 
 // this line officially creates the Schema and names it Baker
 const Baker = mongoose.model('Baker', bakerSchema)
