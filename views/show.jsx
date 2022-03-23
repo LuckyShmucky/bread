@@ -21,7 +21,11 @@ function Show ({bread}) {
           }
           have gluten.
         </p>
-       
+       {/* <p>Baked by {bread.baker}</p>  */}
+       {/* The second way of displaying this message is much better because 
+       it follows DRY (do not repeat yourself) and is extremely automated */}
+       <p>{bread.getBakedBy()}</p>
+
         <img src={bread.image} alt={bread.name} />
         <li><a href="/breads">Go home</a></li>
       </Default>

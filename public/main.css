@@ -8,3 +8,7 @@ body {
     margin: auto;
   }
   
+  .sub-li{
+    list-style-type: none;
+    content: '- ';
+  }

@@ -16,6 +16,7 @@ function Index ({breads, title}) {
             return (
             <li key={bread.id}>
             <a href={`/breads/${bread.id}`}> {bread.name}</a>
+            {/* <li className='sub-li'>{bread.getBakedBy()}</li> */}
             </li>
             )
         })}
