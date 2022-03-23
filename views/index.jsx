@@ -1,8 +1,9 @@
 const { links } = require('express/lib/response')
 const React = require('react')
+const baker = require('../controllers/bakers_controller')
 const Default = require('./layouts/Default')
 
-function Index ({breads, title}) {
+function Index ({breads, bakers, title}) {
     
     // console.log(breads)
     return ( 
@@ -25,6 +26,19 @@ function Index ({breads, title}) {
         <div className="newButton">
   <a href="/breads/new"><button>Add a new bread</button></a>
 </div>
+        <h3>Bakers</h3>
+        <ul>
+         {
+           bakers.map(baker =>{
+             return(
+             <li key={baker.id}>
+               <a href={`/bakers/${baker.id}`}>{baker.name}</a>
+             </li>
+             ) 
+          })
+         }
+        </ul>
+
       </Default>
     )
 }

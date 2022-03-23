@@ -19,7 +19,11 @@ const bakerSchema = new Schema({
     bio: String
 }, {toJSON: {virtuals: true}})
 
-
+bakerSchema.virtual('breads', {
+    ref: "Bread",
+    localField: "_id",
+    foreignField: "baker"
+})
 
 // this line officially creates the Schema and names it Baker
 const Baker = mongoose.model('Baker', bakerSchema)
