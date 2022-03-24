@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 // creating shorthand for schema constructor 
-const Baker = require('./baker.js')
+// const Baker = require('./baker.js')
 const { Schema } = mongoose
 
 // console.log(process.env.MONGO_URI)

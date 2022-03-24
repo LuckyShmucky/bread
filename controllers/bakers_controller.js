@@ -12,9 +12,15 @@ baker.get('/', (req, res) => {
     })
 } )
 
+
+// SHOW
 baker.get('/:id', (req, res)=>{
     Baker.findById(req.params.id)
-    .populate('breads')
+    //this allows us to only show one bread (breads is part of the baker schema (via the virtual) so that is how this is connecting)
+    .populate({
+        path: 'breads',
+        options: {limit: 1}
+    })
     .then(foundBaker => {
         res.render('bakerShow', {
             baker: foundBaker
