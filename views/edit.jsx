@@ -2,8 +2,7 @@ const React = require('react')
 const Default = require('./layouts/Default')
 
 function Edit ({ bread, bakers }) {
-  console.log('ran edit function')
-  console.log(bread)  
+ 
   return (
       <Default>
         <h2>Edit a bread</h2>
